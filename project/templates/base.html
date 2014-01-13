@@ -9,7 +9,53 @@
   </head>
   <body>
     <div class="container">
-      123
+      <div class="header-bar">
+        <a class="brand" href="#">Вологда, аэропорт</a>
+        <div class="clear"></div>
+      </div>
+      <div class="top-banner"><img src="{{STATIC_URL}}img/vokzal.jpg"></div>
+      <div class="navbar-top">
+          <div class="nav-item"><a href="#" class="{% block page_index %}{% endblock %}" >На главную</a></div>
+          <div class="nav-item"><a href="#" class="{% block page_news %}{% endblock %}">Новости</a></div>
+          <div class="nav-item"><a href="#" class="{% block page_support %}{% endblock %}">Тех. поддержка</a></div>
+          <div class="nav-item"><a href="#" class="{% block page_documents %}{% endblock %}">Документы</a></div>
+          <div class="nav-item"><a href="#" class="{% block page_mobile %}{% endblock %}">Мобильная связь</a></div>
+          <div class="nav-item">
+              <a href="#">Авторизация</a>
+              <div class="sub-menu auth">
+                <form id="" enctype="multipart/form-data" method="post" action="">
+                  {% csrf_token %}
+                  <label>Имя пользователя</label>
+                  <input type="text">
+                  <label>Пароль</label>
+                  <input type="password">
+                  <button class="btn-primary">Вход</button>
+                  <div class="error">Неверное имя пользователя или пароль</div>
+                </form>
+              </div>
+          </div>
+          <div class="clear"></div>
+      </div>
+      <div class="container">
+        <div class="page-title">{% block page_name %}{% endblock %}</div>
+        <div class="news-bar">
+          <div class="news recent"><a href=""><span class="date">12.12.2013</span><br> Регламентные работы</a></div>
+          <div class="news"><a href=""><span class="date">12.12.2013</span><br> Регламентные работы сервер</a></div>
+          <div class="news"><a href=""><span class="date">12.12.2013</span><br> Регламентные работы</a></div>
+          <div class="news"><a href=""><span class="date">12.12.2013</span><br> Регламентные работы</a></div>
+          <div class="news"><a href=""><span class="date">12.12.2013</span><br> Регламентные работы</a></div>
+          <div class="news"><a href=""><span class="date">12.12.2013</span><br> Регламентные работы</a></div>
+          <div class="news"><a href=""><span class="date">12.12.2013</span><br> Регламентные работы</a></div>
+          <div class="news"><a href=""><span class="date">12.12.2013</span><br> Регламентные работы</a></div>
+        </div>
+        <div class="content">
+          {% block main_content %}{% endblock %}
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="bottom-bar">
+        <span>ОАО Вологодское авиационное предприятие</span>
+      </div>
     </div>
     <script src="{{STATIC_URL}}js/libs/jquery-1.10.2.min.js"></script>
     <script src="{{STATIC_URL}}js/libs/jquery.form.min.js"></script>

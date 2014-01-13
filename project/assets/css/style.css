@@ -7,8 +7,177 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+input {
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+input:focus {
+    border-color: rgba(82, 168, 236, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+
+}
+
+.btn-primary {
+    background-color: #006DCC;
+    background-image: linear-gradient(to bottom, #0088CC, #0044CC);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+.btn-primary:hover {
+    background-color: #0044CC;
+    background-image: linear-gradient(to bottom, #0044CC, #0044CC);
+}
+
+.clear {
+    clear: both;
+}
+
 .container {
     margin-left: auto;
     margin-right: auto;
     width: 940px;
+}
+
+.header-bar {
+    background-color: #333333;
+    border-radius: 4px 4px 0 0;
+}
+
+.header-bar a {
+    color: #999999;
+    font-size: 20px;
+    display: block;
+    float: left;
+    padding: 10px 20px 10px 20px;
+}
+
+.header-bar a:hover {
+    color: #FFFFFF;
+}
+
+.top-banner img {
+    display: block;
+}
+
+.navbar-top {
+    background-color: #FAFAFA;
+    background-image: linear-gradient(to bottom, #FFFFFF, #F2F2F2);
+    border-radius: 0 0 4px 4px;
+    border: 1px solid #D4D4D4;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+}
+
+.navbar-top .nav-item {
+    float: left;
+    position: relative;
+}
+
+.navbar-top .nav-item a {
+    display: block;
+    padding: 10px 20px 10px 20px;
+    color: #777777;
+}
+
+.navbar-top .nav-item a:hover {
+    color: #333333;
+}
+
+.navbar-top .nav-item .active {
+    background-color: #E5E5E5;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125) inset;
+    color: #555555;
+}
+
+.navbar-top .nav-item .sub-menu {
+    position: absolute;
+    display: none;
+    border: 1px solid #D4D4D4;
+    border-radius: 0 0 4px 4px;
+    background-color: #FAFAFA;
+}
+
+.navbar-top .nav-item:hover .sub-menu {
+    display: block;
+}
+
+.auth {
+    left: 10px;
+}
+
+.auth label{
+    display: block;
+    padding: 10px 10px 0px 10px;
+}
+
+.auth input{
+    display: block;
+    margin: 0px 10px 10px 10px;
+    width: 150px;
+}
+
+.auth button {
+    margin: 10px;
+    width: 160px;
+}
+
+.auth .error {
+    padding: 10px;
+    color: #B94A48;
+}
+
+.bottom-bar {
+    background-color: #333333;
+    border-radius: 4px;
+    color: #999999;
+}
+
+.bottom-bar span {
+    padding-left: 10px;
+}
+
+.content {
+    width: 700px;
+}
+
+.content p {
+    margin-top: 0;
+}
+
+.page-title {
+    color: #999999;
+    font-size: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.news-bar {
+    float: right;
+    width: 220px;
+}
+
+.news-bar .news {
+    padding-bottom: 10px;
+}
+
+.news-bar .news a {
+    color: #999999;
+}
+
+.news-bar .date {
+    font-weight: bold;
+}
+
+.news-bar .recent a{
+    color: #555555;
 }
