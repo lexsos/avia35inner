@@ -2,3 +2,7 @@
 *.pot
 *.pyc
 local_settings.py
+sqlite3.db
+project/public
+raw/
+project/settings/secret.py
