@@ -41,6 +41,7 @@ input:focus {
 
 .clear {
     clear: both;
+    height: 0;
 }
 
 .container {
@@ -105,6 +106,7 @@ input:focus {
     border: 1px solid #D4D4D4;
     border-radius: 0 0 4px 4px;
     background-color: #FAFAFA;
+    z-index: 1000;
 }
 
 .navbar-top .nav-item:hover .sub-menu {
@@ -181,3 +183,87 @@ input:focus {
 .news-bar .recent a{
     color: #555555;
 }
+
+.news-announce {
+    border: 1px solid #D4D4D4;
+    border-radius: 4px;
+    padding: 10px;
+    position: relative;
+    min-height: 200px;
+    margin-bottom: 10px;
+}
+
+.new-img {
+    width: 200px;
+    position: absolute;
+}
+
+.new-img .date {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #FFFFFF;
+    background-color: #000000;
+    background-color: rgba(1, 1, 1, 0.5);
+    padding: 2px 5px;
+}
+
+.new-content {
+    margin-left: 230px;
+}
+
+.new-content a {
+    color: #999999;
+    font-size: 20px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.new-content .date {
+    text-align: right;
+}
+
+.news-inner {
+    padding: 10px;
+    position: relative;
+}
+
+.news-announce .recent a {
+    color: #444444;
+}
+
+.pagination {
+    text-align: center;
+}
+
+.pagination ul {
+    display: inline-block;
+    padding-left: 0;
+}
+
+.pagination ul > li {
+    display: inline;
+}
+
+.pagination ul > li > a, .pagination ul > li > span {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+    color: #428BCA;
+}
+
+.pagination ul > li > a:hover {
+    background-color: #E5E5E5;
+}
+
+.pagination .active > a, .pagination .active > a:hover {
+    background-color: #428BCA;
+    color: #FFFFFF;
+}
+

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+
+{% block page_name %}Новости{% endblock %}
+
+{% block page_news %}active{% endblock %}
+
+{% block main_content %}
+    <div class="news-announce">
+        <div class="new-img">
+            <img src="{{STATIC_URL}}media/installation.gif">
+            <div class="date">10.12.2013</div>
+        </div>
+        <div class="new-content recent">
+            <a href="">Регламентные работы</a>
+            <p>
+            12.12.2013 будут производиться регламентные работы
+            12.12.2013 будут производиться регламентные работы
+            12.12.2013 будут производиться регламентные работы
+            </p>
+        </div>
+    </div>
+
+    <div class="news-announce">
+        <div class="new-img">
+            <img src="{{STATIC_URL}}media/installation.gif">
+            <div class="date">10.12.2013</div>
+        </div>
+        <div class="new-content">
+            <a href="">Регламентные работы</a>
+            <p>
+            12.12.2013 будут производиться регламентные работы
+            12.12.2013 будут производиться регламентные работы
+            12.12.2013 будут производиться регламентные работы
+            </p>
+        </div>
+    </div>
+    <div class="news-announce">
+        <div class="new-img">
+            <img src="{{STATIC_URL}}media/installation.gif">
+            <div class="date">10.12.2013</div>
+        </div>
+        <div class="new-content">
+            <a href="">Регламентные работы</a>
+            <p>
+            12.12.2013 будут производиться регламентные работы
+            12.12.2013 будут производиться регламентные работы
+            12.12.2013 будут производиться регламентные работы
+            </p>
+        </div>
+    </div>
+
+    <div class="pagination">
+        <ul>
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li class="active" ><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><span>...</span></li>
+            <li><a href="#">99</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+
+
+{% endblock %}
