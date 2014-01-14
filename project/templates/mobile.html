@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+
+{% block page_name %}Мобильная связь{% endblock %}
+
+{% block page_mobile %}active{% endblock %}
+
+{% block main_content %}
+
+<!--
+    <p><strong>Для работы в данном разделе необходимо выполнить авторизацию на сайте</strong></p>
+
+    <p>В настоящий момент лимиты на мобильную связь закрепленные за Вами <strong>отсутствуют</strong>.</p>
+-->
+    <p>В настоящий момент действуют следующие лимиты:</p>
+
+    <div class="mobile-limits">
+        <div class="limit">
+            <span>Телефон(ы): 9211433214</span>
+            <br>
+            <span>Месячный лимит: <strong>500р.</strong> </span>
+        </div>
+        <div class="limit">
+            <span>Телефон(ы): 9211433214</span>
+            <br>
+            <span>Месячный лимит: <strong>500р.</strong> </span>
+        </div>
+    </div>
+
+
+    <div class="mobile-history">
+        <p>Выберите месяц для вывода информации о перерасходах</p>
+        <div class="mselect">
+            <select>
+                <option value="0" selected>Не выбрно</option>
+                <option value="1">2013 декабрь</option>
+                <option value="2">2014 январь</option>
+                <option value="3">2014 февраль</option>
+                <option value="4">2014 март</option>
+            </select>
+            <img src="{{STATIC_URL}}img/progress.gif" class="progress">
+        </div>
+        <div class="detail">
+            <p>Информация за указанный месяц отсутствует</p>
+            <div class="header">
+                <span class="phone">Телефон(ы)</span>
+                <span class="mlimit">Месячный лимит р.</span>
+                <span class="sum">Сумма расхода р.</span>
+                <span class="delta">Перерасход р.</span>
+            </div>
+            <div class="limit">
+               <span class="phone">9211433214</span>
+                <span class="mlimit"><strong>500</strong></span>
+                <span class="sum"><strong>1500</strong></span>
+                <span class="delta"><strong>1000</strong></span>
+            </div>
+            <div class="limit">
+               <span class="phone">9211433214 9211433214 9211433214</span>
+                <span class="mlimit"><strong></strong></span>
+                <span class="sum"><strong>1500</strong></span>
+                <span class="delta"><strong></strong></span>
+            </div>
+            <div class="limit">
+                <span>Итого перерасход за месяц: <strong>1000р.</strong> </span>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

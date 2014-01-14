@@ -143,10 +143,6 @@ fieldset {
     width: 180px;
 }
 
-.auth {
-    left: 10px;
-}
-
 .auth label{
     display: block;
     padding: 10px 10px 0px 10px;
@@ -426,4 +422,70 @@ fieldset {
     border: 1px solid #CCCCCC;
     margin: 10px 0;
     border-radius: 4px;
+}
+
+.mobile-history {
+    padding: 10px 0;
+}
+
+.mobile-limits .limit, .mobile-history .detail .limit {
+    padding: 10px;
+}
+
+.mobile-history select {
+    margin-bottom: 10px;
+}
+
+.mobile-history .detail .header {
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    margin-bottom: -1px;
+    background-color: #E5E5E5;
+    border-radius: 4px 4px 0 0;
+}
+
+.mobile-history .detail .header span, .mobile-history .detail .limit span {
+
+    display: inline-block;
+    text-align: center;
+}
+
+.mobile-history .detail .limit {
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+
+.mobile-history .detail .limit:hover {
+    background-color: #F5F5F5;
+}
+
+.mobile-history .detail .phone{
+    width: 200px;
+}
+
+.mobile-history .detail .mlimit{
+    width: 150px;
+}
+
+.mobile-history .detail .sum{
+    width: 150px;
+}
+
+.mobile-history .detail .delta{
+    width: 150px;
+}
+
+.mobile-history .mselect {
+    position: relative;
+}
+
+.mobile-history .mselect select{
+    width: 190px;
+}
+
+.mobile-history .mselect .progress {
+    position: absolute;
+    left: 200px;
+    display: none;
 }
