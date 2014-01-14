@@ -393,3 +393,37 @@ fieldset {
 .ticket-comments .answer {
     background-color: #DFF0D8;
 }
+
+.documents-list .header, .documents-list .document{
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    margin-bottom: -1px;
+    background-color: #E5E5E5;
+}
+
+.documents-list .header {
+    border-radius: 4px 4px 0px 0px;
+}
+
+.documents-list .document {
+    background-color: #FFFFFF;
+}
+
+.documents-list .number {
+    display: inline-block;
+    width: 40px;
+    vertical-align: top;
+}
+
+.documents-list .title {
+    display: inline-block;
+    width: 630px;
+    vertical-align: top;
+}
+
+.document-view img {
+    max-width: 938px !important;
+    border: 1px solid #CCCCCC;
+    margin: 10px 0;
+    border-radius: 4px;
+}

@@ -1,0 +1,52 @@
+{% load coffeescript %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}avia35{% endblock %}</title>
+    <link href="{{STATIC_URL}}css/style.css" rel="stylesheet" media="screen">
+    <meta charset="utf-8">
+    <link href="{{STATIC_URL}}img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      {% block before_navbar %}{% endblock %}
+      <div class="navbar-top">
+          <div class="nav-item"><a href="#" class="{% block page_index %}{% endblock %}" >На главную</a></div>
+          <div class="nav-item"><a href="#" class="{% block page_news %}{% endblock %}">Новости</a></div>
+          <div class="nav-item">
+            <a href="#" class="{% block page_support %}{% endblock %}">Тех. поддержка</a>
+            <div class="sub-menu support">
+              <a href="#">Создать обращение</a>
+              <a href="#">Мои обращения</a>
+            </div>
+          </div>
+          <div class="nav-item"><a href="#" class="{% block page_documents %}{% endblock %}">Документы</a></div>
+          <div class="nav-item"><a href="#" class="{% block page_mobile %}{% endblock %}">Мобильная связь</a></div>
+          <div class="nav-item">
+              <span>Авторизация</span>
+              <div class="sub-menu auth">
+                <form id="" enctype="multipart/form-data" method="post" action="">
+                  {% csrf_token %}
+                  <label>Имя пользователя</label>
+                  <input type="text">
+                  <label>Пароль</label>
+                  <input type="password">
+                  <button class="btn-primary">Вход</button>
+                  <div class="error">Неверное имя пользователя или пароль</div>
+                </form>
+              </div>
+          </div>
+          <div class="clear"></div>
+      </div>
+      <div class="container">
+        {% block site_content %}{% endblock %}
+      </div>
+      <div class="bottom-bar">
+        <span>ОАО Вологодское авиационное предприятие</span>
+      </div>
+    </div>
+    <script src="{{STATIC_URL}}js/libs/jquery-1.10.2.min.js"></script>
+    <script src="{{STATIC_URL}}js/libs/jquery.form.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL}}{% coffeescript "js/script.coffee" %}"></script>
+  </body>
+</html>

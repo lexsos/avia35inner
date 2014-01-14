@@ -1,0 +1,44 @@
+{% extends "base-menu.html" %}
+
+
+{% block page_documents %}active{% endblock %}
+
+{% block site_content %}
+
+    <div class="page-title">Инструкция "электронная почта домена avia35.ru"</div>
+
+    <div class="pagination">
+        <ul>
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li class="active" ><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><span>...</span></li>
+            <li><a href="#">99</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+
+      <div class="container">
+        <div class="document-view">
+          <img src="{{ STATIC_URL}}media/1.jpg">
+        </div>
+      </div>
+
+    <div class="pagination">
+        <ul>
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li class="active" ><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><span>...</span></li>
+            <li><a href="#">99</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+
+{% endblock %}

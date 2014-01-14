@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block page_name %}Документы{% endblock %}
+
+{% block page_documents %}active{% endblock %}
+
+{% block main_content %}
+    <p>В данном разделе расположены инструкции, приказы и другие нормативные документы. Рекомендуется с ними ознакомиться.</p>
+    <div class="documents-list">
+        <div class="header">
+            <span class="number">#</span>
+            <span class="title">Наименование документа</span>
+        </div>
+        <div class="document">
+            <span class="number">1</span>
+            <span class="title"><a href="">Инструкция "электронная почта домена avia35.ru"</a></span>
+        </div>
+        <div class="document">
+            <span class="number">2</span>
+            <span class="title"><a href="">Инструкция "электронная почта домена avia35.ru" Инструкция "электронная почта домена avia35.ru"</a></span>
+        </div>
+        <div class="document">
+            <span class="number">3</span>
+            <span class="title"><a href="">Инструкция "электронная почта домена avia35.ru" Инструкция "электронная почта домена avia35.ru" Инструкция "электронная почта домена avia35.ru"</a></span>
+        </div>
+    </div>
+{% endblock %}
