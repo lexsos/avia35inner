@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+
+{% block page_name %}Тех. поддержка | Создать обращение{% endblock %}
+
+{% block page_support %}active{% endblock %}
+
+{% block main_content %}
+    <p>Сформулируйте возникшую проблему и опишите ее максимально конкретно. От этого будет зависеть качество и срорость решения проблемы.</p>
+
+    <p><strong>Внимание</strong>: перед созданием обращения перезагрузите Ваш компьютер <strong>дважды</strong> и <strong>ознакомтесь</strong> с инструкциями из раздела "Документы". Возможно, данные действия решат Вашу проблему.</p>
+
+
+    <div class="tiket-add">
+        <form id="" enctype="multipart/form-data" method="post" action="">
+            <fieldset class="new-tiket">
+                {% csrf_token %}
+                <legend>Создание обращения</legend>
+                <p class="error-input">
+                    <label>Заголовок</label>
+                    <br>
+                    <input type="text" class="title">
+                    <br>
+                    <span class="error-msg">Укажите заголовок</span>
+                </p>
+                <p>
+                    <label>Описание проблемы</label>
+                    <br>
+                    <textarea id="content" name="content" class="text"></textarea>
+                    <br>
+                    <span class="error-msg">Опишите Вашу проблему</span>
+                </p>
+                <p class="submit">
+                     <button class="btn-primary">Создать обращение</button>
+                     <img src="{{STATIC_URL}}img/progress.gif" class="progress">
+                </p>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="tiket-accepted">
+        Вашему обращению присвоен номер <a href="">123</a>. Создать <a href="">новое</a> обращение.
+    </div>
+{% endblock %}

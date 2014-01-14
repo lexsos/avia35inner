@@ -9,18 +9,25 @@ body {
 
 a {
     text-decoration: none;
+    color: #0088CC;
 }
 
-input {
+input, textarea {
     border: 1px solid #CCCCCC;
     border-radius: 4px;
     padding: 5px;
 }
 
-input:focus {
+input:focus, textarea:focus {
     border-color: rgba(82, 168, 236, 0.8);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
 
+}
+
+fieldset {
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    margin: 10px 0px;
 }
 
 .btn-primary {
@@ -49,6 +56,21 @@ input:focus {
     margin-right: auto;
     width: 940px;
 }
+
+.error-msg {
+    padding: 10px;
+    color: #B94A48;
+    display: none;
+}
+
+.error-input input, .error-input textarea {
+    border-color: #B94A48;
+}
+
+.error-input .error-msg {
+    display: inline;
+}
+
 
 .header-bar {
     background-color: #333333;
@@ -84,13 +106,13 @@ input:focus {
     position: relative;
 }
 
-.navbar-top .nav-item a {
+.navbar-top .nav-item a, .navbar-top .nav-item span{
     display: block;
     padding: 10px 20px 10px 20px;
     color: #777777;
 }
 
-.navbar-top .nav-item a:hover {
+.navbar-top .nav-item a:hover, .navbar-top .nav-item span:hover {
     color: #333333;
 }
 
@@ -111,6 +133,14 @@ input:focus {
 
 .navbar-top .nav-item:hover .sub-menu {
     display: block;
+}
+
+.navbar-top .nav-item .sub-menu a:hover {
+    background-color: #E5E5E5;
+}
+
+.navbar-top .nav-item .support {
+    width: 180px;
 }
 
 .auth {
@@ -258,6 +288,10 @@ input:focus {
     color: #428BCA;
 }
 
+.pagination ul > li > span {
+    color: #999999;
+}
+
 .pagination ul > li > a:hover {
     background-color: #E5E5E5;
 }
@@ -267,3 +301,95 @@ input:focus {
     color: #FFFFFF;
 }
 
+.new-tiket {
+    padding-left: 40px;
+}
+
+.new-tiket .text {
+    height: 100px;
+    width: 600px;
+}
+
+.new-tiket .title {
+    width: 600px;
+}
+
+.new-tiket .submit {
+    position: relative;
+}
+
+.new-tiket .submit .progress {
+    position: absolute;
+    left: 200px;
+    top: 0px;
+    display: none;
+}
+
+.tiket-accepted {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.tickets-list .ticket {
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    padding: 5px 15px;
+    margin-bottom: -1px;
+}
+
+.tickets-list .ticket:hover {
+    background-color: #EEEEEE;
+}
+
+.tickets-list .ticket .info {
+    font-size: 10px;
+}
+
+.tickets-list .ticket .info span {
+    margin-right: 20px;
+}
+
+.tickets-list .new {
+    background-color: #DFF0D8;
+}
+
+.tickets-list .closed, .tickets-list .closed a {
+    color: #999999
+}
+
+.ticket-header {
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    margin-bottom: -1px;
+    background-color: #E5E5E5;
+}
+
+.ticket-header .title {
+    font-size: 20px;
+    color: #555555;
+    margin-bottom: 10px;
+}
+
+.ticket-header .info, .ticket-comments .comment .info{
+    text-align: right;
+}
+
+.ticket-header .info span, .ticket-comments .comment .info span {
+    margin-left: 20px;
+    font-size: 10px;
+}
+
+.ticket-comments .comment {
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    margin-bottom: -1px;
+}
+
+.ticket-comments .answer {
+    background-color: #DFF0D8;
+}

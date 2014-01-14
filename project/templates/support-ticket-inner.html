@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+
+{% block page_name %}Тех. поддержка | Мои обращения | 123{% endblock %}
+
+{% block page_support %}active{% endblock %}
+
+{% block main_content %}
+    <div class="ticket-header">
+        <div class="title"><span>Катридж</span></div>
+        <div class="message">Саша, надо поменять катридж!</div>
+        <div class="info">
+            <span>закрыто</span>
+            <span>Диановская Галина Вениаминовна</span>
+            <span>создано 12.12.2013</span>
+            <span>обновлено 12.12.2013</span>
+        </div>
+    </div>
+    <div class="ticket-comments">
+        <div class="comment answer">
+            <div>Заменил картридж</div>
+            <div class="info">
+                <span>Соснин Александр Алексеевич</span>
+                <span>создано 12.12.2013</span>
+            </div>
+        </div>
+        <div class="comment">
+            <div>Нужно заменить еще раз</div>
+            <div class="info">
+                <span>Диановская Галина Вениаминовна</span>
+                <span>создано 12.12.2013</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="tiket-comment-add">
+        <form id="" enctype="multipart/form-data" method="post" action="">
+            <fieldset class="new-tiket">
+                {% csrf_token %}
+                <legend>Добавить комментарий</legend>
+                <p class="error-input">
+                    <textarea id="content" name="content" class="text"></textarea>
+                    <br>
+                    <span class="error-msg">Введите текст коментария</span>
+                </p>
+                <p class="submit">
+                     <button class="btn-primary">Добавить</button>
+                     <img src="{{STATIC_URL}}img/progress.gif" class="progress">
+                </p>
+            </fieldset>
+        </form>
+    </div>
+
+{% endblock %}
