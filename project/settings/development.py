@@ -30,3 +30,5 @@ DEBUG_TOOLBAR_CONFIG = {
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '_6_8%3_#i+di=a5z0gdh_eke%u^oa=f=#ik@px^h&9yp1xqur1'
+
+AUTH_LDAP_BIND_PASSWORD = '123456'

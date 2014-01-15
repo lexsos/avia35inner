@@ -1,4 +1,4 @@
-{% load coffeescript %}
+{% load coffeescript accounts %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,18 +23,19 @@
           <div class="nav-item"><a href="#" class="{% block page_documents %}{% endblock %}">Документы</a></div>
           <div class="nav-item"><a href="#" class="{% block page_mobile %}{% endblock %}">Мобильная связь</a></div>
           <div class="nav-item">
+            {% if user.is_authenticated %}
+              <span>{{ user }}</span>
+              <div class="sub-menu auth-info">
+                <span class="info">{{ user.first_name }} {{ user.last_name }}</span>
+                <span class="info">{{ user.email }}</span>
+                <a href="{% url 'accounts_logout' %}?next=/tmpl/index.html">Выход</a>
+              </div>
+            {% else %}
               <span>Авторизация</span>
               <div class="sub-menu auth">
-                <form id="" enctype="multipart/form-data" method="post" action="">
-                  {% csrf_token %}
-                  <label>Имя пользователя</label>
-                  <input type="text">
-                  <label>Пароль</label>
-                  <input type="password">
-                  <button class="btn-primary">Вход</button>
-                  <div class="error">Неверное имя пользователя или пароль</div>
-                </form>
+                {% accounts_login_form %}
               </div>
+            {% endif %}
           </div>
           <div class="clear"></div>
       </div>

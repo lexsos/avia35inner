@@ -168,6 +168,10 @@ fieldset {
     color: #B94A48;
 }
 
+.auth-info {
+    width: 250px;
+}
+
 .bottom-bar {
     background-color: #333333;
     border-radius: 4px;
@@ -503,6 +507,7 @@ fieldset {
     border-collapse: collapse;
     width: 100%;
 }
+
 .gridtable th {
     border-width: 1px;
     padding: 8px;
@@ -510,6 +515,7 @@ fieldset {
     border-color: #666666;
     background-color: #dedede;
 }
+
 .gridtable td {
     border-width: 1px;
     padding: 8px;

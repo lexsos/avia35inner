@@ -1,0 +1,18 @@
+{% if user.is_authenticated %}
+    <span>{{ user.first_name }} {{ user.last_name }}</span>
+    <script type="text/javascript">location.reload();</script>
+{% else %}
+    <form id="auth-form" method="post" action="{% url 'django.contrib.auth.views.login' %}?next={% url 'django.contrib.auth.views.login' %}">
+        {% csrf_token %}
+        <label>Имя пользователя</label>
+        {{ form.username }}
+        <label>Пароль</label>
+        {{ form.password }}
+        <button class="btn-primary" type="submit">
+            Вход
+        </button>
+        {% if form.errors %}
+            <div class="error">Неверное имя пользователя или пароль</div>
+        {% endif %}
+    </form>
+{% endif %}

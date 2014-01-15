@@ -1,4 +1,6 @@
 import os
+import ldap
+from django_auth_ldap.config import LDAPSearch, ActiveDirectoryGroupType
 
 
 PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '..')
@@ -91,7 +93,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 PROJECT_APPS = (
-
+    'accounts',
 )
 
 INSTALLED_APPS = (
@@ -155,3 +157,32 @@ TINYMCE_DEFAULT_CONFIG = {
     'plugins': "spellchecker",
     'theme_advanced_buttons3_add': "|,spellchecker",
 }
+
+
+AUTH_LDAP_SERVER_URI = "ldap://avia.local"
+AUTH_LDAP_BIND_DN = 'www_inner@avia.local'
+AUTH_LDAP_USER_SEARCH = LDAPSearch('DC=avia,DC=local', ldap.SCOPE_SUBTREE, "(sAMAccountName=%(user)s)",)
+AUTH_LDAP_GROUP_SEARCH = LDAPSearch('DC=avia,DC=local', ldap.SCOPE_SUBTREE, "(objectClass=group)")
+
+AUTH_LDAP_GROUP_TYPE = ActiveDirectoryGroupType()
+AUTH_LDAP_FIND_GROUP_PERMS = True
+AUTH_LDAP_GLOBAL_OPTIONS = {
+    ldap.OPT_X_TLS_REQUIRE_CERT: False,
+    ldap.OPT_REFERRALS: False,
+}
+
+AUTH_LDAP_USER_ATTR_MAP = {
+    "first_name": "givenName",
+    "last_name": "sn",
+    "email": "mail",
+}
+
+AUTH_LDAP_USER_FLAGS_BY_GROUP = {
+    'is_superuser':  'CN=wwwAdmins,OU=Groups,OU=Services,OU=VAP,DC=avia,DC=local',
+    'is_staff':  'CN=wwwAdmins,OU=Groups,OU=Services,OU=VAP,DC=avia,DC=local',
+}
+
+AUTHENTICATION_BACKENDS = (
+    'django_auth_ldap.backend.LDAPBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)

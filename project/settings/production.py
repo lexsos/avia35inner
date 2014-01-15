@@ -22,6 +22,6 @@ INSTALLED_APPS += (
 )
 
 try:
-    from .secret import SECRET_KEY
+    from .secret import SECRET_KEY, AUTH_LDAP_BIND_PASSWORD
 except:
-    print 'Need secret.py file with SECRET_KEY'
+    pass
