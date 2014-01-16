@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+
+{% block page_name %}Новости | {{ news.title}}{% endblock %}
+
+{% block page_news %}active{% endblock %}
+
+{% block main_content %}
+    <div class="news-inner">
+        <div class="news-img">
+            <img src="{{ news.image|thumbnail_url:'news' }}">
+        </div>
+        <div class="news-content">
+            {% if news.content %}
+                {{ news.content | safe }}
+            {% else %}
+                {{ news.preview | safe }}
+            {% endif %}
+            <p class="date">Дата публикации: {{ news.pub_date_start|date:"d.m.o" }}</p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+
+{% block page_name %}Новости{% endblock %}
+
+{% block page_news %}active{% endblock %}
+
+{% block main_content %}
+    {% if news_list %}
+        {% for news in news_list %}
+            <div class="news-announce">
+                <div class="news-img">
+                    <img src="{{ news.image|thumbnail_url:'news' }}">
+                    <div class="date">{{ news.pub_date_start|date:"d.m.o" }}</div>
+                </div>
+                <div class="news-content{% if news.is_actual %} actual{% endif %}">
+                    <a href="{% url 'news_detail' news.pk %}">{{ news.title }}</a>
+                    {{ news.preview | safe }}
+                </div>
+            </div>
+        {% endfor %}
+        {% include 'paginator.html' %}
+    {% else %}
+        <p>Опубликованных новостей нет</p>
+    {% endif %}
+{% endblock %}

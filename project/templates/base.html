@@ -1,4 +1,5 @@
 {% extends "base-menu.html" %}
+{% load news %}
 
 
 
@@ -14,16 +15,7 @@
 {% block site_content %}
   <div class="page-title">{% block page_name %}{% endblock %}</div>
 
-  <div class="news-bar">
-    <div class="news recent"><a href=""><span class="date">12.12.2013</span><br> Регламентные работы</a></div>
-    <div class="news"><a href=""><span class="date">12.12.2013</span><br> Регламентные работы сервер</a></div>
-    <div class="news"><a href=""><span class="date">12.12.2013</span><br> Регламентные работы</a></div>
-    <div class="news"><a href=""><span class="date">12.12.2013</span><br> Регламентные работы</a></div>
-    <div class="news"><a href=""><span class="date">12.12.2013</span><br> Регламентные работы</a></div>
-    <div class="news"><a href=""><span class="date">12.12.2013</span><br> Регламентные работы</a></div>
-    <div class="news"><a href=""><span class="date">12.12.2013</span><br> Регламентные работы</a></div>
-    <div class="news"><a href=""><span class="date">12.12.2013</span><br> Регламентные работы</a></div>
-  </div>
+  {% news_bar %}
 
   <div class="content">
           {% block main_content %}{% endblock %}

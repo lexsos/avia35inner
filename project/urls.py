@@ -14,6 +14,7 @@ urlpatterns = patterns('',
 
     url(r'^accounts/', include('accounts.urls')),
     url(r'^$', include('index.urls')),
+    url(r'^news/', include('news.urls')),
 )
 
 if settings.DEBUG:

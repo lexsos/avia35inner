@@ -11,8 +11,8 @@
     <div class="container">
       {% block before_navbar %}{% endblock %}
       <div class="navbar-top">
-          <div class="nav-item"><a href="#" class="{% block page_index %}{% endblock %}" >На главную</a></div>
-          <div class="nav-item"><a href="#" class="{% block page_news %}{% endblock %}">Новости</a></div>
+          <div class="nav-item"><a href="{% url 'index_page' %}" class="{% block page_index %}{% endblock %}" >На главную</a></div>
+          <div class="nav-item"><a href="{% url 'news_list' %}" class="{% block page_news %}{% endblock %}">Новости</a></div>
           <div class="nav-item">
             <a href="#" class="{% block page_support %}{% endblock %}">Тех. поддержка</a>
             <div class="sub-menu support">

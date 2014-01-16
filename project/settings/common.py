@@ -95,6 +95,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 PROJECT_APPS = (
     'accounts',
     'index',
+    'news',
+    'core',
 )
 
 INSTALLED_APPS = (
@@ -187,3 +189,10 @@ AUTHENTICATION_BACKENDS = (
     'django_auth_ldap.backend.LDAPBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
+
+
+THUMBNAIL_ALIASES = {
+    '': {
+        'news': {'size': (200, 200), 'crop': True},
+    },
+}

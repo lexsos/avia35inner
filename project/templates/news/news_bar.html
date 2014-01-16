@@ -1,0 +1,11 @@
+<div class="news-bar">
+    {% for news in news_list %}
+        <div class="news{% if news.is_actual %} actual{% endif %}">
+            <a href="{% url 'news_detail' news.pk %}">
+                <span class="date">{{ news.pub_date_start|date:"d.m.o" }}</span>
+                <br>
+                {{ news.title }}
+            </a>
+        </div>
+    {% endfor %}
+  </div>
