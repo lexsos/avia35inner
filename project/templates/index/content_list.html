@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block page_name %}Главная{% endblock %}
+
+{% block page_index %}active{% endblock %}
+
+{% block main_content %}
+    {% for content in content_list %}
+        {{ content.content_rich | safe }}
+        {{ content.content_plane | safe }}
+    {% endfor %}
+{% endblock %}

@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^tmpl/(.*)$', 'django.shortcuts.render'),
 
     url(r'^accounts/', include('accounts.urls')),
+    url(r'^$', include('index.urls')),
 )
 
 if settings.DEBUG:
