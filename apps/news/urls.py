@@ -13,7 +13,7 @@ urlpatterns = patterns('',
         r'^$',
         PublicationListView.as_view(
             model=News,
-            paginate_by=CONFIG['NEWS_PAGINATE_BY']
+            paginate_by=CONFIG['PAGINATE_BY']
         ),
         name='news_list',
     ),

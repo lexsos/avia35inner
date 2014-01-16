@@ -2,7 +2,8 @@ from django.conf import settings
 
 
 CONFIG = {
-    'NEWS_PAGINATE_BY': 3
+    'PAGINATE_BY': 3,
+    'BAR_LIMIT': 10,
 }
 
-CONFIG.update(getattr(settings, 'JOB_CONFIG', {}))
+CONFIG.update(getattr(settings, 'NEWS', {}))
