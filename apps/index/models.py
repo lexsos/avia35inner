@@ -21,6 +21,6 @@ class Content(Publication):
         return self.title
 
     class Meta:
-        verbose_name_plural = _('content item')
-        verbose_name = _('content items')
+        verbose_name_plural = _('content items')
+        verbose_name = _('content item')
         ordering = ['-weight', '-pub_date_start']

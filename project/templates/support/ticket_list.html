@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% block page_name %}Тех. поддержка | Мои обращения{% endblock %}
+
+{% block page_support %}active{% endblock %}
+
+{% block main_content %}
+
+    {% if ticket_list %}
+        <div class="tickets-list">
+            {% for ticket in ticket_list %}
+                <div class="ticket {{ ticket.status }}">
+                    <div><a href="{{ ticket.get_absolute_url }}">{{ ticket.title }}</a></div>
+                    <div class="info">
+                        <span>зарегистрировано {{ ticket.create_date|date:"d.m.o" }}</span>
+                        {% if ticket.last_update %}
+                            <span>обновлено {{ ticket.last_update|date:"d.m.o" }}</span>
+                        {% endif %}
+                        <span>{{ ticket.author.first_name }} {{ ticket.author.last_name }}</span>
+                        <span>{{ ticket.pk }}</span>
+                        {% if not ticket.opened %}
+                            <span>закрыто</span>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% include 'paginator.html' %}
+    {% else %}
+        <p>Обращений не найдено</p>
+    {% endif %}
+{% endblock %}

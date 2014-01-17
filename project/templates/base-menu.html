@@ -14,10 +14,10 @@
           <div class="nav-item"><a href="{% url 'index_page' %}" class="{% block page_index %}{% endblock %}" >На главную</a></div>
           <div class="nav-item"><a href="{% url 'news_list' %}" class="{% block page_news %}{% endblock %}">Новости</a></div>
           <div class="nav-item">
-            <a href="#" class="{% block page_support %}{% endblock %}">Тех. поддержка</a>
+            <a href="{% url 'support_index' %}" class="{% block page_support %}{% endblock %}">Тех. поддержка</a>
             <div class="sub-menu support">
               <a href="#">Создать обращение</a>
-              <a href="#">Мои обращения</a>
+              <a href="{% url 'support_ticket_list' %}">Мои обращения</a>
             </div>
           </div>
           <div class="nav-item"><a href="#" class="{% block page_documents %}{% endblock %}">Документы</a></div>
