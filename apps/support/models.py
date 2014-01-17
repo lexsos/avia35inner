@@ -19,7 +19,7 @@ class Ticket(models.Model):
     )
     create_date = models.DateTimeField(
         verbose_name=_('create date'),
-        auto_now_add = True,
+        auto_now_add=True,
     )
 
     @models.permalink
@@ -54,9 +54,8 @@ class Comment(models.Model):
     )
     create_date = models.DateTimeField(
         verbose_name=_('create date'),
-        auto_now_add = True,
+        auto_now_add=True,
     )
-
 
     def __unicode__(self):
         return u'{0}:{1}:{2}'.format(self.author, self.ticket, self.content)

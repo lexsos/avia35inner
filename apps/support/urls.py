@@ -6,6 +6,9 @@ from .views import (
     TicketDetailView,
     AddCommentView,
     CommentsView,
+    AddTicketView,
+    AddedTicketView,
+    TicketNewView,
 )
 
 
@@ -14,6 +17,11 @@ urlpatterns = patterns('',
         r'^$',
         TemplateView.as_view(template_name='support/support_index.html'),
         name='support_index',
+    ),
+    url(
+        r'^ticket_new$',
+        TicketNewView.as_view(),
+        name='support_ticket_new',
     ),
     url(
         r'^my_tickets$',
@@ -34,5 +42,15 @@ urlpatterns = patterns('',
         r'^ajax/comments/(?P<pk>\d+)/$',
         CommentsView.as_view(),
         name='support_comments_get',
+    ),
+    url(
+        r'^ajax/ticket_add/$',
+        AddTicketView.as_view(),
+        name='support_ticket_add',
+    ),
+    url(
+        r'^ajax/ticket_added/(?P<pk>\d+)/$',
+        AddedTicketView.as_view(),
+        name='support_ticket_added',
     ),
 )

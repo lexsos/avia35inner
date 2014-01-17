@@ -1,0 +1,24 @@
+<form id="add-ticket-form" enctype="multipart/form-data" method="post" action="{% url 'support_ticket_add' %}">
+    <fieldset class="new-tiket">
+        {% csrf_token %}
+        <legend>Создание обращения</legend>
+        <p class="{% if form.title.errors %}error-input{% endif %}">
+            <label>Заголовок</label>
+            <br>
+            {{ form.title }}
+            <br>
+            <span class="error-msg">Укажите заголовок</span>
+        </p>
+        <p class="{% if form.content.errors %}error-input{% endif %}">
+            <label>Описание проблемы</label>
+            <br>
+            {{ form.content }}
+            <br>
+            <span class="error-msg">Опишите Вашу проблему</span>
+        </p>
+        <p class="submit">
+            <button class="btn-primary" type="submit">Создать обращение</button>
+            <img src="{{STATIC_URL}}img/progress.gif" class="progress">
+        </p>
+    </fieldset>
+</form>

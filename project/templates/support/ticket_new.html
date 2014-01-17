@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block page_name %}Тех. поддержка | Создать обращение{% endblock %}
+
+{% block page_support %}active{% endblock %}
+
+{% block main_content %}
+    <p>Сформулируйте возникшую проблему и опишите ее максимально конкретно. От этого будет зависеть качество и срорость решения проблемы.</p>
+
+    <p><strong>Внимание</strong>: перед созданием обращения перезагрузите Ваш компьютер <strong>дважды</strong> и <strong>ознакомтесь</strong> с инструкциями из раздела "Документы". Возможно, данные действия решат Вашу проблему.</p>
+
+    <div class="tiket-add" form-url="{% url 'support_ticket_add' %}">
+    </div>
+{% endblock %}

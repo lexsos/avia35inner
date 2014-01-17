@@ -8,7 +8,7 @@ from news.settings import CONFIG
 register = Library()
 
 
-@register.inclusion_tag('news/news_bar.html')
+@register.inclusion_tag('news/tag/news_bar.html')
 def news_bar():
     limit = CONFIG['BAR_LIMIT']
     return {

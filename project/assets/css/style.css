@@ -325,7 +325,7 @@ fieldset {
 
 .new-tiket .submit .progress {
     position: absolute;
-    left: 120px;
+    left: 200px;
     top: 0px;
     display: none;
 }

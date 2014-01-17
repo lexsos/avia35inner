@@ -2,14 +2,16 @@ from django.views.generic import (
     ListView,
     DetailView,
     FormView,
+    TemplateView,
 )
 from django.db.models import Max
 from django.shortcuts import redirect
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
 
-from .models import Ticket
-from .forms import CommentForm
+from .models import Ticket, Comment
+from .forms import CommentForm, TicketForm
+from .settings import CONFIG
 
 
 class TicketSecurityMixin(object):
@@ -18,9 +20,9 @@ class TicketSecurityMixin(object):
         if not request.user.is_authenticated():
             return redirect('support_index')
         return super(TicketSecurityMixin, self).dispatch(
-                request,
-                *args,
-                **kwargs
+            request,
+            *args,
+            **kwargs
         )
 
     def get_queryset(self):
@@ -62,6 +64,7 @@ class TicketListView(TicketSecurityMixin,
                      ListView):
 
     model = Ticket
+    paginate_by = CONFIG['PAGINATE_BY']
 
     def get_queryset(self):
         queryset = super(TicketListView, self).get_queryset()
@@ -78,7 +81,7 @@ class TicketDetailView(TicketSecurityMixin,
 class CommentsView(TicketSecurityMixin, DetailView):
 
     model = Ticket
-    template_name = 'support/comment_list.html'
+    template_name = 'support/ajax/comment_list.html'
 
     def get(self, request, *args, **kwargs):
         ticket = self.get_object()
@@ -90,7 +93,7 @@ class CommentsView(TicketSecurityMixin, DetailView):
 class AddCommentView(FormView):
 
     form_class = CommentForm
-    template_name = 'support/comment_form.html'
+    template_name = 'support/ajax/comment_form.html'
 
     def get_context_data(self, **kwargs):
         context = super(AddCommentView, self).get_context_data(**kwargs)
@@ -111,3 +114,44 @@ class AddCommentView(FormView):
             instance.ticket = ticket
             instance.save()
         return super(AddCommentView, self).form_valid(form)
+
+
+class TicketNewView(TicketSecurityMixin, TemplateView):
+
+    template_name = 'support/ticket_new.html'
+
+
+class AddTicketView(FormView):
+
+    form_class = TicketForm
+    template_name = 'support/ajax/ticket_form.html'
+
+    def form_valid(self, form):
+        user = self.request.user
+        if user.is_authenticated():
+            ticket = form.save(commit=False)
+            ticket.author = user
+            ticket.save()
+            comment = Comment(
+                ticket=ticket,
+                content=form.cleaned_data['content'],
+                author=user
+            )
+            comment.save()
+            self.new_pk = ticket.pk
+            print dir(form)
+
+        return super(AddTicketView, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse('support_ticket_added', kwargs={'pk': self.new_pk})
+
+
+class AddedTicketView(TemplateView):
+
+    template_name = 'support/ajax/ticket_added.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(AddedTicketView, self).get_context_data(**kwargs)
+        context['ticket_pk'] = self.kwargs['pk']
+        return context

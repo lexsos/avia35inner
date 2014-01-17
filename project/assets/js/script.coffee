@@ -39,4 +39,10 @@ $(document).ready =>
                 $('.new-tiket .submit .progress').css('display', 'block')
                 true
 
-
+    form_url = $('.tiket-add').attr('form-url')
+    $('.tiket-add').load form_url, ->
+        set_ajax_form '#add-ticket-form',
+            (data) ->
+            ->
+                $('.new-tiket .submit .progress').css('display', 'block')
+                true
