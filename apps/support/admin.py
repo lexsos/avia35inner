@@ -4,13 +4,12 @@ from .models import Ticket, Comment
 
 
 class TicketAdmin(admin.ModelAdmin):
-    list_filter = ('author', 'opened', 'updated_author', 'create_date')
+    list_filter = ('author', 'opened', 'create_date')
     list_display = (
         'title',
         'author',
         'create_date',
         'opened',
-        'updated_author'
     )
 
 

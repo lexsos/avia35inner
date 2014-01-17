@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+
+{% block page_name %}Тех. поддержка | Мои обращения | {{ ticket.pk }}{% endblock %}
+
+{% block page_support %}active{% endblock %}
+
+{% block main_content %}
+    <div class="ticket-header">
+        <div class="title"><span>{{ ticket.title }}</span></div>
+        <div class="info">
+            {% if not ticket.opened %}<span>закрыто</span>{% endif %}
+            <span>{{ ticket.author.first_name }} {{ ticket.author.last_name }}</span>
+            <span>создано {{ ticket.create_date|naturaltime }}</span>
+            <span>обновлено {{ ticket.last_update|naturaltime }}</span>
+        </div>
+    </div>
+
+    <div class="ticket-comments" url="{% url 'support_comments_get' ticket.pk %}">
+    </div>
+
+    {% if ticket.opened %}
+        <div class="tiket-comment-add" form-url="{% url 'support_comment_add' ticket.pk %}">
+        </div>
+    {% endif %}
+
+{% endblock %}

@@ -1,7 +1,12 @@
 from django.conf.urls import patterns, url
 from django.views.generic.base import TemplateView
 
-from .views import TicketListView, TicketDetailView
+from .views import (
+    TicketListView,
+    TicketDetailView,
+    AddCommentView,
+    CommentsView,
+)
 
 
 urlpatterns = patterns('',
@@ -19,5 +24,15 @@ urlpatterns = patterns('',
         r'^(?P<pk>\d+)/$',
         TicketDetailView.as_view(),
         name='support_ticket_detail',
+    ),
+    url(
+        r'^ajax/comment_add/(?P<pk>\d+)/$',
+        AddCommentView.as_view(),
+        name='support_comment_add',
+    ),
+    url(
+        r'^ajax/comments/(?P<pk>\d+)/$',
+        CommentsView.as_view(),
+        name='support_comments_get',
     ),
 )

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load humanize %}
 
 
 {% block page_name %}Тех. поддержка | Мои обращения{% endblock %}
@@ -6,22 +7,18 @@
 {% block page_support %}active{% endblock %}
 
 {% block main_content %}
-
     {% if ticket_list %}
         <div class="tickets-list">
             {% for ticket in ticket_list %}
-                <div class="ticket {{ ticket.status }}">
+                <div class="ticket  {% if ticket.new_count %}new{% endif %} {% if not ticket.opened %}closed{% endif %}">
                     <div><a href="{{ ticket.get_absolute_url }}">{{ ticket.title }}</a></div>
                     <div class="info">
-                        <span>зарегистрировано {{ ticket.create_date|date:"d.m.o" }}</span>
-                        {% if ticket.last_update %}
-                            <span>обновлено {{ ticket.last_update|date:"d.m.o" }}</span>
-                        {% endif %}
+                        {% if not ticket.opened %}<span>закрыто</span>{% endif %}
+                        <span>зарегистрировано {{ ticket.create_date|naturaltime }}</span>
+                        <span>обновлено {{ ticket.last_update|naturaltime }}</span>
                         <span>{{ ticket.author.first_name }} {{ ticket.author.last_name }}</span>
-                        <span>{{ ticket.pk }}</span>
-                        {% if not ticket.opened %}
-                            <span>закрыто</span>
-                        {% endif %}
+                        <span>#{{ ticket.pk }}</span>
+                        {% if ticket.new_count %}<span>новых {{ ticket.new_count }}</span>{% endif %}
                     </div>
                 </div>
             {% endfor %}

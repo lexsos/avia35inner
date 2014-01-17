@@ -112,6 +112,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'django.contrib.humanize',
     'south',
     'easy_thumbnails',
     'static_precompiler',

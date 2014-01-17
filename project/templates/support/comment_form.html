@@ -1,0 +1,15 @@
+<form id="add-comment-form" enctype="multipart/form-data" method="post" action="{% url 'support_comment_add' ticket_pk %}">
+    <fieldset class="new-tiket">
+        {% csrf_token %}
+        <legend>Добавить комментарий</legend>
+        <p class="{% if form.errors %}error-input{% endif %}">
+            {{ form.content }}
+            <br>
+            <span class="error-msg">Введите текст коментария</span>
+            </p>
+            <p class="submit">
+                <button class="btn-primary">Добавить</button>
+                <img src="{{STATIC_URL}}img/progress.gif" class="progress">
+            </p>
+    </fieldset>
+</form>

@@ -1,0 +1,12 @@
+{% load humanize %}
+
+
+{% for comment in ticket.comment_set.all %}
+    <div class="comment {% if comment.author != ticket.author %}answer{% endif %}">
+        <div>{{ comment.content }}</div>
+        <div class="info">
+            <span>{{ comment.author.first_name }} {{ comment.author.last_name }}</span>
+            <span>создано {{ comment.create_date|naturaltime }}</span>
+        </div>
+    </div>
+{% endfor %}
