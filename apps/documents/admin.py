@@ -22,6 +22,7 @@ class DocumentAdmin(PublicationAdmin):
 
 class PageAdmin(admin.ModelAdmin):
     list_display = ('document', 'page_number')
+    list_filter = ('document',)
 
 
 admin.site.register(Document, DocumentAdmin)

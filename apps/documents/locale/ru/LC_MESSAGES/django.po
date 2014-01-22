@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-18 13:47+0400\n"
+"POT-Creation-Date: 2014-01-22 10:01+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,54 +19,42 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: admin.py:13
+#: admin.py:14
 msgid "Document parameters"
 msgstr "Параметры документа"
 
-#: models.py:9
-msgid "doctype title"
-msgstr "название"
-
-#: models.py:13
-msgid "doctype description"
-msgstr "описание"
-
-#: models.py:20
-msgid "documents types"
-msgstr "типы документов"
-
-#: models.py:21 models.py:29
-msgid "document type"
-msgstr "тип документа"
-
-#: models.py:32
+#: models.py:18
 msgid "document title"
 msgstr "название"
 
-#: models.py:37
+#: models.py:23
 msgid "document file"
 msgstr "файл"
 
-#: models.py:42 models.py:44
-msgid "b"
-msgstr "байт"
-
-#: models.py:48
-msgid "Kb"
-msgstr "Кб"
-
-#: models.py:51
-msgid "Mb"
-msgstr "Мб"
-
-#: models.py:54
-msgid "Gb"
-msgstr "Гб"
-
-#: models.py:62
-msgid "documents"
+#: models.py:34
+msgid "documents items"
 msgstr "документы"
 
-#: models.py:63
+#: models.py:35
+msgid "document item"
+msgstr "документ"
+
+#: models.py:43
 msgid "document"
 msgstr "документ"
+
+#: models.py:47
+msgid "page file"
+msgstr "файл страницы"
+
+#: models.py:50
+msgid "page number"
+msgstr "номер страницы"
+
+#: models.py:57
+msgid "pages items"
+msgstr "страницы"
+
+#: models.py:58
+msgid "page item"
+msgstr "страница"
