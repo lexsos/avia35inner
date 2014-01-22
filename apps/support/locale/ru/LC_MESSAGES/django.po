@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-22 10:39+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: models.py:9
+msgid "title"
+msgstr "заголовок"
+
+#: models.py:13
+msgid "opened"
+msgstr "открыт"
+
+#: models.py:18 models.py:49
+msgid "author"
+msgstr "автор"
+
+#: models.py:21 models.py:56
+msgid "create date"
+msgstr "дата создания"
+
+#: models.py:33
+msgid "tickets items"
+msgstr "обращения"
+
+#: models.py:34
+msgid "ticket item"
+msgstr "обращение"
+
+#: models.py:42
+msgid "ticket"
+msgstr "обращение"
+
+#: models.py:45
+msgid "content"
+msgstr "содержание"
+
+#: models.py:52
+msgid "readed"
+msgstr "прочитано"
+
+#: models.py:64
+msgid "comments items"
+msgstr "комментарии"
+
+#: models.py:65
+msgid "comment item"
+msgstr "комментарий"
