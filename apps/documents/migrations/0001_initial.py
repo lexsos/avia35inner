@@ -16,7 +16,7 @@ class Migration(SchemaMigration):
             ('pub_date_end', self.gf('django.db.models.fields.DateTimeField')(db_index=True, null=True, blank=True)),
             ('weight', self.gf('django.db.models.fields.PositiveIntegerField')(default=0, db_index=True)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('document', self.gf('django.db.models.fields.files.FileField')(max_length=100)),
+            ('document_file', self.gf('django.db.models.fields.files.FileField')(max_length=100)),
         ))
         db.send_create_signal(u'documents', ['Document'])
 
@@ -47,7 +47,7 @@ class Migration(SchemaMigration):
     models = {
         u'documents.document': {
             'Meta': {'ordering': "['-weight', 'pub_date_start']", 'object_name': 'Document'},
-            'document': ('django.db.models.fields.files.FileField', [], {'max_length': '100'}),
+            'document_file': ('django.db.models.fields.files.FileField', [], {'max_length': '100'}),
             'enabled': ('django.db.models.fields.BooleanField', [], {'default': 'True', 'db_index': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'pub_date_end': ('django.db.models.fields.DateTimeField', [], {'db_index': 'True', 'null': 'True', 'blank': 'True'}),

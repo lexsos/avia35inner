@@ -18,7 +18,7 @@ class Document(Publication):
         verbose_name=_('document title'),
         max_length=255,
     )
-    document = models.FileField(
+    document_file = models.FileField(
         upload_to='documents',
         verbose_name=_('document file'),
     )
@@ -80,7 +80,7 @@ def make_pages(document_pk):
     document = Document.objects.get(pk=document_pk)
     clear_pages(document)
 
-    pdf_file_name = document.document._get_path()
+    pdf_file_name = document.document_file._get_path()
     pdf_file = Image(filename=pdf_file_name, resolution=CONFIG['RESOLUTION'])
     tmp_dir = tempfile.mkdtemp()
 

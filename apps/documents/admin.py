@@ -14,7 +14,7 @@ class DocumentAdmin(PublicationAdmin):
             _('Document parameters'),
             {
                 'classes': ('wide',),
-                'fields': ('title', 'document',)
+                'fields': ('title', 'document_file',)
             }
         ),
     ) + PublicationAdmin.fieldsets
