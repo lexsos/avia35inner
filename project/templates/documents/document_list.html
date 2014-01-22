@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+{% block page_name %}Документы{% endblock %}
+
+{% block page_documents %}active{% endblock %}
+
+{% block main_content %}
+    <p>В данном разделе расположены инструкции, приказы и другие нормативные документы. Рекомендуется с ними ознакомиться.</p>
+    <div class="documents-list">
+        <div class="header">
+            <span class="number">#</span>
+            <span class="title">Наименование документа</span>
+        </div>
+        {% for document in document_list %}
+            <div class="document">
+                <span class="number">{{ forloop.counter }}</span>
+                <span class="title">
+                    <a href="{% url 'document_page_list' document.pk %}">{{ document.title }}</a>
+                </span>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

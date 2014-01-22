@@ -1,0 +1,22 @@
+{% extends "base-menu.html" %}
+
+
+{% block page_documents %}active{% endblock %}
+
+{% block site_content %}
+
+    <div class="page-title">Документ "{{ document.title }}"</div>
+
+    {% include 'paginator.html' %}
+
+    <div class="container">
+        {% for page in page_list %}
+            <div class="document-view">
+                <img src="{{ page.page_file.url }}">
+            </div>
+        {% endfor %}
+    </div>
+
+    {% include 'paginator.html' %}
+
+{% endblock %}

@@ -98,6 +98,7 @@ PROJECT_APPS = (
     'news',
     'core',
     'support',
+    'documents',
 )
 
 INSTALLED_APPS = (

@@ -5,6 +5,7 @@ pil
 easy-thumbnails==1.2
 django-tinymce==1.5.1
 django-auth-ldap==1.1.7
+wand==0.3.5
 
 -e git://github.com/andreyfedoseev/django-static-precompiler.git#egg=django-static-precompiler
 -e git://github.com/lexsos/django-mixin.git#egg=django-mixin

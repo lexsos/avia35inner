@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^$', include('index.urls')),
     url(r'^news/', include('news.urls')),
     url(r'^support/', include('support.urls')),
+    url(r'^documents/', include('documents.urls')),
 )
 
 if settings.DEBUG:
