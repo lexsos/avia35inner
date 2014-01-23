@@ -99,6 +99,7 @@ PROJECT_APPS = (
     'core',
     'support',
     'documents',
+    'mobile',
 )
 
 INSTALLED_APPS = (
