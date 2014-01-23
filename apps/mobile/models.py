@@ -24,6 +24,7 @@ class Phone(models.Model):
     phone_number = models.CharField(
         verbose_name=_('phone number'),
         max_length=255,
+        unique=True,
     )
     description = models.TextField(
         verbose_name=_('description'),
@@ -47,6 +48,8 @@ class MonthlyLimit(models.Model):
     )
     limit_sum = models.FloatField(
         verbose_name=_('limit sum'),
+        null=True,
+        blank=True,
     )
     phone = models.ForeignKey(
         Phone,
