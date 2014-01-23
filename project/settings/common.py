@@ -179,7 +179,7 @@ AUTH_LDAP_GLOBAL_OPTIONS = {
 }
 
 AUTH_LDAP_USER_ATTR_MAP = {
-    "first_name": "givenName",
+    "first_name": "displayName",
     "last_name": "sn",
     "email": "mail",
 }

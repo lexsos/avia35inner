@@ -26,7 +26,7 @@
             {% if user.is_authenticated %}
               <span>{{ user }}</span>
               <div class="sub-menu auth-info">
-                <span class="info">{{ user.first_name }} {{ user.last_name }}</span>
+                <span class="info">{{ user.first_name }}</span>
                 <span class="info">{{ user.email }}</span>
                 <a href="{% url 'accounts_logout' %}?next={% url 'index_page' %}">Выход</a>
               </div>

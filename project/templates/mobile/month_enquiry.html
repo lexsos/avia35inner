@@ -26,7 +26,7 @@
       {% if consumption.get_overrun %}
         <tr>
           <td>{{ consumption.monthly_limit.phone.phone_number }}</td>
-          <td>{{ consumption.monthly_limit.user.first_name }} {{ consumption.monthly_limit.user.last_name }}</td>
+          <td>{{ consumption.monthly_limit.user.first_name }}</td>
           <td>{{ consumption.consumption_sum }}</td>
           <td>{{ consumption.monthly_limit.limit_sum }}</td>
           <td>{{ consumption.get_overrun }}</td>

@@ -16,7 +16,7 @@
                         {% if not ticket.opened %}<span>закрыто</span>{% endif %}
                         <span>зарегистрировано {{ ticket.create_date|naturaltime }}</span>
                         <span>обновлено {{ ticket.last_update|naturaltime }}</span>
-                        <span>{{ ticket.author.first_name }} {{ ticket.author.last_name }}</span>
+                        <span>{{ ticket.author.first_name }}</span>
                         <span>#{{ ticket.pk }}</span>
                         {% if ticket.new_count %}<span>новых {{ ticket.new_count }}</span>{% endif %}
                     </div>

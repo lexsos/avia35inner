@@ -9,7 +9,7 @@
 
     {% if request.user.is_authenticated %}
         {% if limit_list %}
-            <p>В настоящий момент за абонентом "{{ user.first_name }} {{ user.last_name }}" закреплен следующий телефон(ы):</p>
+            <p>В настоящий момент за абонентом "{{ user.first_name }}" закреплен следующий телефон(ы):</p>
             <div class="mobile-limits">
                 {% for limit in limit_list %}
                     <div class="limit">

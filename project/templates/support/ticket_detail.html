@@ -11,7 +11,7 @@
         <div class="title"><span>{{ ticket.title }}</span></div>
         <div class="info">
             {% if not ticket.opened %}<span>закрыто</span>{% endif %}
-            <span>{{ ticket.author.first_name }} {{ ticket.author.last_name }}</span>
+            <span>{{ ticket.author.first_name }}</span>
             <span>создано {{ ticket.create_date|naturaltime }}</span>
             <span>обновлено {{ ticket.last_update|naturaltime }}</span>
         </div>
