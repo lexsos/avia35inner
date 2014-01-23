@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}avia35{% endblock %}</title>
+    <link href="{{STATIC_URL}}css/style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <link href="{{STATIC_URL}}img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  </head>
+  <body>
+
+  <p>Открытое акционерное общество <br> “Вологодское авиационное предприятие”</p>
+  <p class="doc-name">Справка</p>
+
+  <p>По результатам проверки за телефонные переговоры за {{ month }} выявлены перерасходы установленных лимитов по сотовой связи.</p>
+
+  <table class="gridtable">
+    <tr>
+      <th>Номер телфона</th>
+      <th>Владелец</th>
+      <th>Сумма расходов, р</th>
+      <th>Лимит, р</th>
+      <th>Перерасход, р</th>
+    </tr>
+
+    {% for consumption in consumption_list %}
+      {% if consumption.get_overrun %}
+        <tr>
+          <td>{{ consumption.monthly_limit.phone.phone_number }}</td>
+          <td>{{ consumption.monthly_limit.user.first_name }} {{ consumption.monthly_limit.user.last_name }}</td>
+          <td>{{ consumption.consumption_sum }}</td>
+          <td>{{ consumption.monthly_limit.limit_sum }}</td>
+          <td>{{ consumption.get_overrun }}</td>
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
+
+  <p>Инженер АСУ <br> Соснин А. А.</p>
+
+  </body>
+</html>

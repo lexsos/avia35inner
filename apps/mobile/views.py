@@ -9,6 +9,18 @@ from .models import (
     Consumption,
 )
 
+class MonthMixin(object):
+
+    def get_context_data(self, **kwargs):
+        context = super(MonthMixin, self).get_context_data(**kwargs)
+        context['month'] = get_object_or_404(Month, pk=self.kwargs['month'])
+        return context
+
+    def get_queryset(self):
+        queryset = super(MonthMixin, self).get_queryset()
+        queryset = queryset.filter(month=self.kwargs['month'])
+        return queryset
+
 
 class MobileView(ListView):
 
@@ -26,7 +38,7 @@ class MobileView(ListView):
         return context
 
 
-class ConsumptionView(ListView):
+class ConsumptionView(MonthMixin, ListView):
 
     model = Consumption
     template_name = 'mobile/ajax/consumption.html'
@@ -42,7 +54,6 @@ class ConsumptionView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ConsumptionView, self).get_context_data(**kwargs)
-        context['month'] = get_object_or_404(Month, pk=self.kwargs['month'])
         total_overrun = 0
         for consumption in self.get_queryset():
             total_overrun += consumption.get_overrun()
@@ -52,5 +63,19 @@ class ConsumptionView(ListView):
     def get_queryset(self):
         queryset = super(ConsumptionView, self).get_queryset()
         queryset = queryset.filter(monthly_limit__user=self.request.user)
-        queryset = queryset.filter(month=self.kwargs['month'])
         return queryset
+
+
+class MonthEnquiryView(MonthMixin, ListView):
+
+    model = Consumption
+    template_name = 'mobile/month_enquiry.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated() or not request.user.is_superuser:
+            raise Http404
+        return super(MonthEnquiryView, self).dispatch(
+            request,
+            *args,
+            **kwargs
+        )
