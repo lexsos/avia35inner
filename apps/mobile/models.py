@@ -109,6 +109,13 @@ class Consumption(models.Model):
         verbose_name=_('consumption sum'),
     )
 
+    def __unicode__(self):
+        return u'{0}-{1}-{2}'.format(
+            unicode(self.month),
+            unicode(self.monthly_limit),
+            self.consumption_sum,
+        )
+
     class Meta:
         verbose_name_plural = _('consumptions items')
         verbose_name = _('consumption item')
