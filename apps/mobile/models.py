@@ -112,6 +112,14 @@ class Consumption(models.Model):
         verbose_name=_('consumption sum'),
     )
 
+    def get_overrun(self):
+        if self.monthly_limit.limit_sum is None:
+            return 0
+        delta = self.monthly_limit.limit_sum - self.consumption_sum
+        if delta > 0:
+            return 0
+        return -delta
+
     def __unicode__(self):
         return u'{0}-{1}-{2}'.format(
             unicode(self.month),

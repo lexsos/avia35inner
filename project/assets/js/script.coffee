@@ -46,3 +46,12 @@ $(document).ready =>
             ->
                 $('.new-tiket .submit .progress').css('display', 'block')
                 true
+
+
+    $('.mobile-history .mselect select').change ->
+        url = $(this).val()
+        if url != ''
+            $('.mobile-history .detail').load url
+        else
+            $('.mobile-history .detail').html ''
+

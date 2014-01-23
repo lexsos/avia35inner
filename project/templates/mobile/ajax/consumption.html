@@ -1,0 +1,27 @@
+{% if consumption_list %}
+    <div class="header">
+        <span class="phone">Телефон</span>
+        <span class="mlimit">Месячный лимит р.</span>
+        <span class="sum">Сумма расхода р.</span>
+        <span class="delta">Перерасход р.</span>
+    </div>
+    {% for consumption in consumption_list %}
+        <div class="limit">
+            <span class="phone">{{ consumption.monthly_limit.phone.phone_number }}</span>
+            <span class="mlimit">
+                <strong>
+                    {% if consumption.monthly_limit.limit_sum  %}
+                        {{ consumption.monthly_limit.limit_sum }}
+                    {% endif %}
+                </strong>
+            </span>
+            <span class="sum"><strong>{{ consumption.consumption_sum }}</strong></span>
+            <span class="delta"><strong>{{ consumption.get_overrun }}</strong></span>
+        </div>
+    {% endfor %}
+    <div class="limit">
+        <span>Итого перерасход за {{ month }}: <strong>{{ total_overrun }}р.</strong> </span>
+    </div>
+{% else %}
+    <p>Информация за {{ month }} отсутствует</p>
+{% endif %}

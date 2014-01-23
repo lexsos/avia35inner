@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     url(r'^news/', include('news.urls')),
     url(r'^support/', include('support.urls')),
     url(r'^documents/', include('documents.urls')),
+    url(r'^mobile/', include('mobile.urls')),
 )
 
 if settings.DEBUG:

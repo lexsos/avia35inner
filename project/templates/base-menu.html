@@ -21,7 +21,7 @@
             </div>
           </div>
           <div class="nav-item"><a href="{% url 'document_list' %}" class="{% block page_documents %}{% endblock %}">Документы</a></div>
-          <div class="nav-item"><a href="#" class="{% block page_mobile %}{% endblock %}">Мобильная связь</a></div>
+          <div class="nav-item"><a href="{% url 'mobile_index' %}" class="{% block page_mobile %}{% endblock %}">Мобильная связь</a></div>
           <div class="nav-item">
             {% if user.is_authenticated %}
               <span>{{ user }}</span>

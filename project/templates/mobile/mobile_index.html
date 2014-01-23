@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+
+{% block page_name %}Мобильная связь{% endblock %}
+
+{% block page_mobile %}active{% endblock %}
+
+{% block main_content %}
+
+    {% if request.user.is_authenticated %}
+        {% if limit_list %}
+            <p>В настоящий момент за абонентом "{{ user.first_name }} {{ user.last_name }}" закреплен следующий телефон(ы):</p>
+            <div class="mobile-limits">
+                {% for limit in limit_list %}
+                    <div class="limit">
+                        <span>Телефон: {{ limit.phone.phone_number }}</span>
+                        <br>
+                        {% if limit.limit_sum %}
+                            <span>Месячный лимит: <strong>{{ limit.limit_sum }}р.</strong> </span>
+                        {% else %}
+                            <span>Лимит не установлен</span>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>В настоящий момент телефоны, закрепленные за Вами, <strong>отсутствуют</strong>.</p>
+        {% endif %}
+
+
+        <div class="mobile-history">
+            <p>Выберите месяц для вывода информации о перерасходах</p>
+            <div class="mselect">
+                <select>
+                    <option value="" selected>Не выбрно</option>
+                    {% for month in month_list %}
+                        <option value="{% url 'mobile_consumption' month.pk %}">{{ month }}</option>
+                    {% endfor %}
+                </select>
+                <img src="{{STATIC_URL}}img/progress.gif" class="progress">
+            </div>
+            <div class="detail">
+            </div>
+        </div>
+    {% else %}
+        <p><strong>Для работы в данном разделе необходимо выполнить авторизацию на сайте</strong></p>
+    {% endif %}
+{% endblock %}
