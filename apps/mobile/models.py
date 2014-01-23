@@ -91,6 +91,10 @@ class Month(models.Model):
             MONTH_CHOICES[self.month_number-1][1],
         )
 
+    @models.permalink
+    def get_absolute_url(self):
+        return ('mobile_month_enquiry', [str(self.id)])
+
     class Meta:
         verbose_name_plural = _('monthes items')
         verbose_name = _('month item')
