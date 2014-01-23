@@ -1,0 +1,140 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-23 11:31+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: models.py:7
+msgid "january"
+msgstr "январь"
+
+#: models.py:8
+msgid "february"
+msgstr "февраль"
+
+#: models.py:9
+msgid "march"
+msgstr "март"
+
+#: models.py:10
+msgid "april"
+msgstr "апрель"
+
+#: models.py:11
+msgid "may"
+msgstr "май"
+
+#: models.py:12
+msgid "june"
+msgstr "июнь"
+
+#: models.py:13
+msgid "july"
+msgstr "июль"
+
+#: models.py:14
+msgid "august"
+msgstr "август"
+
+#: models.py:15
+msgid "september"
+msgstr "сентябрь"
+
+#: models.py:16
+msgid "october"
+msgstr "октябрь"
+
+#: models.py:17
+msgid "november"
+msgstr "ноябрь"
+
+#: models.py:18
+msgid "december"
+msgstr "декабрь"
+
+#: models.py:25
+msgid "phone number"
+msgstr "номер телефона"
+
+#: models.py:29
+msgid "description"
+msgstr "описание"
+
+#: models.py:37
+msgid "phones items"
+msgstr "телефоны"
+
+#: models.py:38
+msgid "phone item"
+msgstr "телефон"
+
+#: models.py:46
+msgid "user"
+msgstr "пользователь"
+
+#: models.py:49
+msgid "limit sum"
+msgstr "сумма лимита"
+
+#: models.py:53
+msgid "phone"
+msgstr "телефон"
+
+#: models.py:56
+msgid "deleted at"
+msgstr "дата удаления"
+
+#: models.py:65
+msgid "monthly limits items"
+msgstr "месячные лимиты"
+
+#: models.py:66 models.py:106
+msgid "monthly limit item"
+msgstr "месячный лимит"
+
+#: models.py:75
+msgid "consumption file"
+msgstr "файл расходов"
+
+#: models.py:78
+msgid "month number"
+msgstr "месяц"
+
+#: models.py:82
+msgid "year number"
+msgstr "год"
+
+#: models.py:92
+msgid "monthes items"
+msgstr "месяцы"
+
+#: models.py:93 models.py:102
+msgid "month item"
+msgstr "месяц"
+
+#: models.py:109
+msgid "consumption sum"
+msgstr "сумма расхода"
+
+#: models.py:113
+msgid "consumptions items"
+msgstr "расходы"
+
+#: models.py:114
+msgid "consumption item"
+msgstr "расход"
