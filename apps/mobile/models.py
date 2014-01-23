@@ -74,7 +74,7 @@ class Month(models.Model):
         upload_to='mobile',
         verbose_name=_('consumption file'),
     )
-    month_number = models.DateField(
+    month_number = models.PositiveIntegerField(
         verbose_name=_('month number'),
         choices=MONTH_CHOICES,
     )

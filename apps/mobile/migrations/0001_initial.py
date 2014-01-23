@@ -33,7 +33,7 @@ class Migration(SchemaMigration):
         db.create_table(u'mobile_month', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('consumption_file', self.gf('django.db.models.fields.files.FileField')(max_length=100)),
-            ('month_number', self.gf('django.db.models.fields.DateField')()),
+            ('month_number', self.gf('django.db.models.fields.PositiveIntegerField')()),
             ('year_number', self.gf('django.db.models.fields.PositiveIntegerField')()),
         ))
         db.send_create_signal(u'mobile', ['Month'])
@@ -125,7 +125,7 @@ class Migration(SchemaMigration):
             'Meta': {'ordering': "['year_number', 'month_number']", 'unique_together': "(('year_number', 'month_number'),)", 'object_name': 'Month'},
             'consumption_file': ('django.db.models.fields.files.FileField', [], {'max_length': '100'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'month_number': ('django.db.models.fields.DateField', [], {}),
+            'month_number': ('django.db.models.fields.PositiveIntegerField', [], {}),
             'year_number': ('django.db.models.fields.PositiveIntegerField', [], {})
         },
         u'mobile.monthlylimit': {
