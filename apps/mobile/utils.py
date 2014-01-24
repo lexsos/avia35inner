@@ -65,7 +65,6 @@ def make_consumptions(request, month_pk):
     csv_file = open(month.consumption_file._get_path(), 'rb')
     csv_reader = csv.reader(csv_file, delimiter=';')
     for row in csv_reader:
-        print row
         test_consumption(request, row)
         consumption_sum = to_float(row[7])
         add_consumption(month, row[0], consumption_sum)
