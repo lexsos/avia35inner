@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
 from .models import Phone, MonthlyLimit, Month, Consumption
+from .utils import make_consumptions
 
 
 class PhoneAdmin(admin.ModelAdmin):
@@ -15,6 +16,13 @@ class MonthlyLimitAdmin(admin.ModelAdmin):
 
 class MonthAdmin(admin.ModelAdmin):
     list_filter = ('year_number',)
+
+    def process_month(self, request, queryset):
+        for month in queryset:
+            make_consumptions(request, month.pk)
+    process_month.short_description = _('process selected %(verbose_name_plural)s month')
+
+    actions = (process_month,)
 
 
 class ConsumptionAdmin(admin.ModelAdmin):

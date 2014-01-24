@@ -95,6 +95,9 @@ class Month(models.Model):
     def get_absolute_url(self):
         return ('mobile_month_enquiry', [str(self.id)])
 
+    def save(self, *args, **kwargs):
+        super(Month, self).save(*args, **kwargs)
+
     class Meta:
         verbose_name_plural = _('monthes items')
         verbose_name = _('month item')
@@ -136,3 +139,6 @@ class Consumption(models.Model):
         verbose_name = _('consumption item')
         ordering = ['month', 'monthly_limit']
         unique_together = ('month', 'monthly_limit')
+
+
+
