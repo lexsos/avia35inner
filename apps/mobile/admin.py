@@ -20,7 +20,7 @@ class MonthAdmin(admin.ModelAdmin):
     def process_month(self, request, queryset):
         for month in queryset:
             make_consumptions(request, month.pk)
-    process_month.short_description = _('process selected %(verbose_name_plural)s month')
+    process_month.short_description = _('process selected %(verbose_name_plural)s')
 
     actions = (process_month,)
 
