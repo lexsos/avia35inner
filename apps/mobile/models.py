@@ -37,7 +37,7 @@ class Phone(models.Model):
     class Meta:
         verbose_name_plural = _('phones items')
         verbose_name = _('phone item')
-        ordering = ['phone_number',]
+        ordering = ['phone_number', ]
 
 
 class MonthlyLimit(models.Model):
@@ -139,6 +139,3 @@ class Consumption(models.Model):
         verbose_name = _('consumption item')
         ordering = ['month', 'monthly_limit']
         unique_together = ('month', 'monthly_limit')
-
-
-

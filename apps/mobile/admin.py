@@ -37,7 +37,6 @@ class ConsumptionAdmin(admin.ModelAdmin):
         return obj.monthly_limit.limit_sum
     get_limit_sum.short_description = _('limit sum')
 
-
     list_filter = ('month', 'monthly_limit__user')
 
 admin.site.register(Phone, PhoneAdmin)

@@ -23,6 +23,7 @@ class TicketAdmin(admin.ModelAdmin):
 
     actions = (make_closed, make_opend)
 
+
 class CommentAdmin(admin.ModelAdmin):
     list_filter = ('author', 'create_date')
     list_display = ('ticket', 'author', 'create_date', 'content')

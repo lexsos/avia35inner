@@ -1,5 +1,4 @@
 from django.conf.urls import patterns, url
-from dj_mixin.publications.views import PublicationListView
 
 from .views import MobileView, ConsumptionView, MonthEnquiryView
 

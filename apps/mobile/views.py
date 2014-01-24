@@ -1,6 +1,5 @@
 from django.views.generic import ListView
 from django.http import Http404
-from django.db.models import Sum
 from django.shortcuts import get_object_or_404
 
 from .models import (
@@ -8,6 +7,7 @@ from .models import (
     MonthlyLimit,
     Consumption,
 )
+
 
 class MonthMixin(object):
 
@@ -72,7 +72,8 @@ class MonthEnquiryView(MonthMixin, ListView):
     template_name = 'mobile/month_enquiry.html'
 
     def dispatch(self, request, *args, **kwargs):
-        if not request.user.is_authenticated() or not request.user.is_superuser:
+        if not request.user.is_authenticated() or \
+           not request.user.is_superuser:
             raise Http404
         return super(MonthEnquiryView, self).dispatch(
             request,
