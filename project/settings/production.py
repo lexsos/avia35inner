@@ -21,6 +21,8 @@ INSTALLED_APPS += (
     'gunicorn',
 )
 
+USE_X_FORWARDED_HOST = True
+
 try:
     from .secret import SECRET_KEY, AUTH_LDAP_BIND_PASSWORD
 except:
