@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-22 10:01+0400\n"
+"POT-Creation-Date: 2014-01-27 08:53+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,42 +19,47 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: admin.py:14
+#: admin.py:15
 msgid "Document parameters"
 msgstr "Параметры документа"
 
-#: models.py:18
+#: admin.py:26
+#, python-format
+msgid "make pages for selected documents"
+msgstr "создать страницы для выбранных документов"
+
+#: models.py:10
 msgid "document title"
 msgstr "название"
 
-#: models.py:23
+#: models.py:15
 msgid "document file"
 msgstr "файл"
 
-#: models.py:34
+#: models.py:22
 msgid "documents items"
 msgstr "документы"
 
-#: models.py:35
+#: models.py:23
 msgid "document item"
 msgstr "документ"
 
-#: models.py:43
+#: models.py:31
 msgid "document"
 msgstr "документ"
 
-#: models.py:47
+#: models.py:35
 msgid "page file"
 msgstr "файл страницы"
 
-#: models.py:50
+#: models.py:38
 msgid "page number"
 msgstr "номер страницы"
 
-#: models.py:57
+#: models.py:45
 msgid "pages items"
 msgstr "страницы"
 
-#: models.py:58
+#: models.py:46
 msgid "page item"
 msgstr "страница"

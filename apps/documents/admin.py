@@ -3,6 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from dj_mixin.publications.admin import PublicationAdmin
 
 from .models import Document, Page
+from .utils import make_pages
 
 
 class DocumentAdmin(PublicationAdmin):
@@ -18,6 +19,13 @@ class DocumentAdmin(PublicationAdmin):
             }
         ),
     ) + PublicationAdmin.fieldsets
+
+    def make_pages(self, request, queryset):
+        for document in queryset:
+            make_pages(request, document.pk)
+    make_pages.short_description = _('make pages for selected documents')
+
+    actions = (make_pages,)
 
 
 class PageAdmin(admin.ModelAdmin):
