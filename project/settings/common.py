@@ -200,3 +200,6 @@ THUMBNAIL_ALIASES = {
         'news': {'size': (200, 200), 'crop': True},
     },
 }
+
+EMAIL_HOST = 'ns2.avia35.ru'
+EMAIL_PORT = '25'
