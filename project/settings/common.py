@@ -185,8 +185,8 @@ AUTH_LDAP_USER_ATTR_MAP = {
 }
 
 AUTH_LDAP_USER_FLAGS_BY_GROUP = {
-    'is_superuser':  'CN=wwwAdmins,OU=Groups,OU=Services,OU=VAP,DC=avia,DC=local',
-    'is_staff':  'CN=wwwAdmins,OU=Groups,OU=Services,OU=VAP,DC=avia,DC=local',
+    'is_superuser':  'CN=wwwAdmins,OU=services,OU=groups,OU=VAP,DC=avia,DC=local',
+    'is_staff':  'CN=wwwAdmins,OU=services,OU=groups,OU=VAP,DC=avia,DC=local',
 }
 
 AUTHENTICATION_BACKENDS = (
